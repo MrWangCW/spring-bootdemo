@@ -64,6 +64,7 @@ public class SpringBootdemoApplication extends SpringBootServletInitializer{
 	@RequestMapping(value = "/test",produces = "text/plain;charset=UTF-8")
 	@ResponseBody
 	public String test(){
+		//测试111
 		return "host:"+host+"port："+port+"host："+redisDto.getHost()+"port:"+redisDto.getPort();
 	}
 
