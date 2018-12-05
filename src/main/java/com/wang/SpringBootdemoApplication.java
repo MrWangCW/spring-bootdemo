@@ -65,6 +65,7 @@ public class SpringBootdemoApplication extends SpringBootServletInitializer{
 	@ResponseBody
 	public String test(){
 		//测试111
+		//测试222
 		return "host:"+host+"port："+port+"host："+redisDto.getHost()+"port:"+redisDto.getPort();
 	}
 
