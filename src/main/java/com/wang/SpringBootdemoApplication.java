@@ -67,6 +67,9 @@ public class SpringBootdemoApplication extends SpringBootServletInitializer{
 		//测试111
 		//测试222
 		//测试啊啊啊啊啊
+		if(true){
+			System.out.println("111111");
+		}
 		return "host:"+host+"port："+port+"host："+redisDto.getHost()+"port:"+redisDto.getPort();
 	}
 
