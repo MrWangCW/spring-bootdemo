@@ -1,0 +1,503 @@
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://WebXml.com.cn/"
+                  xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  targetNamespace="http://WebXml.com.cn/">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    </wsdl:documentation>
+    <wsdl:types>
+        <s:schema elementFormDefault="qualified" targetNamespace="http://WebXml.com.cn/">
+            <s:element name="getSupportCity">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="byProvinceName" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="getSupportCityResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="getSupportCityResult" type="tns:ArrayOfString"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:complexType name="ArrayOfString">
+                <s:sequence>
+                    <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+                </s:sequence>
+            </s:complexType>
+            <s:element name="getSupportProvince">
+                <s:complexType/>
+            </s:element>
+            <s:element name="getSupportProvinceResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="getSupportProvinceResult"
+                                   type="tns:ArrayOfString"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="getSupportDataSet">
+                <s:complexType/>
+            </s:element>
+            <s:element name="getSupportDataSetResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="getSupportDataSetResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any minOccurs="2"  maxOccurs="2"/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="getWeatherbyCityName">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="theCityName" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="getWeatherbyCityNameResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="getWeatherbyCityNameResult"
+                                   type="tns:ArrayOfString"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="getWeatherbyCityNamePro">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="theCityName" type="s:string"/>
+                        <s:element minOccurs="0" maxOccurs="1" name="theUserID" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="getWeatherbyCityNameProResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="0" maxOccurs="1" name="getWeatherbyCityNameProResult"
+                                   type="tns:ArrayOfString"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString"/>
+            <s:element name="DataSet" nillable="true">
+                <s:complexType>
+                    <s:sequence>
+                        <s:any minOccurs="2"  maxOccurs="2"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </wsdl:types>
+    <wsdl:message name="getSupportCitySoapIn">
+        <wsdl:part name="parameters" element="tns:getSupportCity"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportCitySoapOut">
+        <wsdl:part name="parameters" element="tns:getSupportCityResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportProvinceSoapIn">
+        <wsdl:part name="parameters" element="tns:getSupportProvince"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportProvinceSoapOut">
+        <wsdl:part name="parameters" element="tns:getSupportProvinceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportDataSetSoapIn">
+        <wsdl:part name="parameters" element="tns:getSupportDataSet"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportDataSetSoapOut">
+        <wsdl:part name="parameters" element="tns:getSupportDataSetResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameSoapIn">
+        <wsdl:part name="parameters" element="tns:getWeatherbyCityName"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameSoapOut">
+        <wsdl:part name="parameters" element="tns:getWeatherbyCityNameResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameProSoapIn">
+        <wsdl:part name="parameters" element="tns:getWeatherbyCityNamePro"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameProSoapOut">
+        <wsdl:part name="parameters" element="tns:getWeatherbyCityNameProResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportCityHttpGetIn">
+        <wsdl:part name="byProvinceName" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportCityHttpGetOut">
+        <wsdl:part name="Body" element="tns:ArrayOfString"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportProvinceHttpGetIn"/>
+    <wsdl:message name="getSupportProvinceHttpGetOut">
+        <wsdl:part name="Body" element="tns:ArrayOfString"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportDataSetHttpGetIn"/>
+    <wsdl:message name="getSupportDataSetHttpGetOut">
+        <wsdl:part name="Body" element="tns:DataSet"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameHttpGetIn">
+        <wsdl:part name="theCityName" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameHttpGetOut">
+        <wsdl:part name="Body" element="tns:ArrayOfString"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameProHttpGetIn">
+        <wsdl:part name="theCityName" type="s:string"/>
+        <wsdl:part name="theUserID" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameProHttpGetOut">
+        <wsdl:part name="Body" element="tns:ArrayOfString"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportCityHttpPostIn">
+        <wsdl:part name="byProvinceName" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportCityHttpPostOut">
+        <wsdl:part name="Body" element="tns:ArrayOfString"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportProvinceHttpPostIn"/>
+    <wsdl:message name="getSupportProvinceHttpPostOut">
+        <wsdl:part name="Body" element="tns:ArrayOfString"/>
+    </wsdl:message>
+    <wsdl:message name="getSupportDataSetHttpPostIn"/>
+    <wsdl:message name="getSupportDataSetHttpPostOut">
+        <wsdl:part name="Body" element="tns:DataSet"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameHttpPostIn">
+        <wsdl:part name="theCityName" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameHttpPostOut">
+        <wsdl:part name="Body" element="tns:ArrayOfString"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameProHttpPostIn">
+        <wsdl:part name="theCityName" type="s:string"/>
+        <wsdl:part name="theUserID" type="s:string"/>
+    </wsdl:message>
+    <wsdl:message name="getWeatherbyCityNameProHttpPostOut">
+        <wsdl:part name="Body" element="tns:ArrayOfString"/>
+    </wsdl:message>
+    <wsdl:portType name="WeatherWebServiceSoap">
+        <wsdl:operation name="getSupportCity">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getSupportCitySoapIn"/>
+            <wsdl:output message="tns:getSupportCitySoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportProvince">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getSupportProvinceSoapIn"/>
+            <wsdl:output message="tns:getSupportProvinceSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportDataSet">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getSupportDataSetSoapIn"/>
+            <wsdl:output message="tns:getSupportDataSetSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityName">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getWeatherbyCityNameSoapIn"/>
+            <wsdl:output message="tns:getWeatherbyCityNameSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityNamePro">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getWeatherbyCityNameProSoapIn"/>
+            <wsdl:output message="tns:getWeatherbyCityNameProSoapOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="WeatherWebServiceHttpGet">
+        <wsdl:operation name="getSupportCity">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getSupportCityHttpGetIn"/>
+            <wsdl:output message="tns:getSupportCityHttpGetOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportProvince">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getSupportProvinceHttpGetIn"/>
+            <wsdl:output message="tns:getSupportProvinceHttpGetOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportDataSet">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getSupportDataSetHttpGetIn"/>
+            <wsdl:output message="tns:getSupportDataSetHttpGetOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityName">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getWeatherbyCityNameHttpGetIn"/>
+            <wsdl:output message="tns:getWeatherbyCityNameHttpGetOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityNamePro">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getWeatherbyCityNameProHttpGetIn"/>
+            <wsdl:output message="tns:getWeatherbyCityNameProHttpGetOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="WeatherWebServiceHttpPost">
+        <wsdl:operation name="getSupportCity">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getSupportCityHttpPostIn"/>
+            <wsdl:output message="tns:getSupportCityHttpPostOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportProvince">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getSupportProvinceHttpPostIn"/>
+            <wsdl:output message="tns:getSupportProvinceHttpPostOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportDataSet">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getSupportDataSetHttpPostIn"/>
+            <wsdl:output message="tns:getSupportDataSetHttpPostOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityName">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getWeatherbyCityNameHttpPostIn"/>
+            <wsdl:output message="tns:getWeatherbyCityNameHttpPostOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityNamePro">
+            <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+            </wsdl:documentation>
+            <wsdl:input message="tns:getWeatherbyCityNameProHttpPostIn"/>
+            <wsdl:output message="tns:getWeatherbyCityNameProHttpPostOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="WeatherWebServiceSoap" type="tns:WeatherWebServiceSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getSupportCity">
+            <soap:operation soapAction="http://WebXml.com.cn/getSupportCity" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportProvince">
+            <soap:operation soapAction="http://WebXml.com.cn/getSupportProvince" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportDataSet">
+            <soap:operation soapAction="http://WebXml.com.cn/getSupportDataSet" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityName">
+            <soap:operation soapAction="http://WebXml.com.cn/getWeatherbyCityName" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityNamePro">
+            <soap:operation soapAction="http://WebXml.com.cn/getWeatherbyCityNamePro" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="WeatherWebServiceSoap12" type="tns:WeatherWebServiceSoap">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getSupportCity">
+            <soap12:operation soapAction="http://WebXml.com.cn/getSupportCity" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportProvince">
+            <soap12:operation soapAction="http://WebXml.com.cn/getSupportProvince" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportDataSet">
+            <soap12:operation soapAction="http://WebXml.com.cn/getSupportDataSet" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityName">
+            <soap12:operation soapAction="http://WebXml.com.cn/getWeatherbyCityName" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityNamePro">
+            <soap12:operation soapAction="http://WebXml.com.cn/getWeatherbyCityNamePro" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="WeatherWebServiceHttpGet" type="tns:WeatherWebServiceHttpGet">
+        <http:binding verb="GET"/>
+        <wsdl:operation name="getSupportCity">
+            <http:operation location="/getSupportCity"/>
+            <wsdl:input>
+                <http:urlEncoded/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportProvince">
+            <http:operation location="/getSupportProvince"/>
+            <wsdl:input>
+                <http:urlEncoded/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportDataSet">
+            <http:operation location="/getSupportDataSet"/>
+            <wsdl:input>
+                <http:urlEncoded/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityName">
+            <http:operation location="/getWeatherbyCityName"/>
+            <wsdl:input>
+                <http:urlEncoded/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityNamePro">
+            <http:operation location="/getWeatherbyCityNamePro"/>
+            <wsdl:input>
+                <http:urlEncoded/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="WeatherWebServiceHttpPost" type="tns:WeatherWebServiceHttpPost">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getSupportCity">
+            <http:operation location="/getSupportCity"/>
+            <wsdl:input>
+                <mime:content type="application/x-www-form-urlencoded"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportProvince">
+            <http:operation location="/getSupportProvince"/>
+            <wsdl:input>
+                <mime:content type="application/x-www-form-urlencoded"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSupportDataSet">
+            <http:operation location="/getSupportDataSet"/>
+            <wsdl:input>
+                <mime:content type="application/x-www-form-urlencoded"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityName">
+            <http:operation location="/getWeatherbyCityName"/>
+            <wsdl:input>
+                <mime:content type="application/x-www-form-urlencoded"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getWeatherbyCityNamePro">
+            <http:operation location="/getWeatherbyCityNamePro"/>
+            <wsdl:input>
+                <mime:content type="application/x-www-form-urlencoded"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:mimeXml part="Body"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="WeatherWebService">
+        <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+        </wsdl:documentation>
+        <wsdl:port name="WeatherWebServiceSoap" binding="tns:WeatherWebServiceSoap">
+            <soap:address location="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx"/>
+        </wsdl:port>
+        <wsdl:port name="WeatherWebServiceSoap12" binding="tns:WeatherWebServiceSoap12">
+            <soap12:address location="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx"/>
+        </wsdl:port>
+        <wsdl:port name="WeatherWebServiceHttpGet" binding="tns:WeatherWebServiceHttpGet">
+            <http:address location="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx"/>
+        </wsdl:port>
+        <wsdl:port name="WeatherWebServiceHttpPost" binding="tns:WeatherWebServiceHttpPost">
+            <http:address location="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

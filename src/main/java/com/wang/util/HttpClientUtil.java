@@ -149,6 +149,7 @@ public class HttpClientUtil {
 		{
 			System.out.println("异常");
 		}
+		System.out.println("信息："+doPost("https://blog.csdn.net/championhengyi/article/details/66583276"));
 		/*String callBackUrl = "http://shopapi_v2.ums.test.viigoo.com:3315/api/Notify/YanZhiOrderPay";
 		String orderNo = "32421224";
 		String userId= "70395880";

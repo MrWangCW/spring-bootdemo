@@ -1,7 +1,6 @@
 package com.wang;
 
 import com.wang.util.propertiesutil.PropertiesListener;
-import com.wang.util.propertiesutil.PropertiesUtil;
 import com.wang.util.propertiesutil.RedisDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,8 +12,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.Map;
 
 
 /**
@@ -64,12 +61,6 @@ public class SpringBootdemoApplication extends SpringBootServletInitializer{
 	@RequestMapping(value = "/test",produces = "text/plain;charset=UTF-8")
 	@ResponseBody
 	public String test(){
-		//测试111
-		//测试222
-		//测试啊啊啊啊啊
-		if(true){
-			System.out.println("111111");
-		}
 		return "host:"+host+"port："+port+"host："+redisDto.getHost()+"port:"+redisDto.getPort();
 	}
 
